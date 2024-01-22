@@ -1,31 +1,45 @@
-const sum = function (a, b) {
+// const sum = function (a, b) {
+//   return a + b;
+// }
+
+// const subtract = function (a, b) {
+//   return a - b;
+// }
+
+// const multiply = function (a, b) {
+//   return a * b;
+// }
+
+// const divide = function (a, b) {
+//   return a / b;
+// }
+
+// const log = function (value) {
+//   console.log(value);
+// }
+
+//* My changes bellow:
+
+const sum = (a, b) => {
   return a + b;
 }
 
-const subtract = function (c, d) {
-  return c - d;
+const subtract = (a, b) => {
+  return a - b;
 }
 
-const multiply = function (e, f) {
-  return e * f;
+const multiply = (a, b) => {
+  return a * b;
 }
 
-const divide = function (g, h) {
-  return g / h;
+const divide = (a, b) => {
+  return a / b;
 }
 
 const log = function (value) {
   console.log(value);
 }
 
-let arrowfunction = () => {
-  return (divide(subtract(multiply(sum(2, 4), sum(5, 2)), 2), 5));
-}
+log(divide(subtract(multiply(sum(2, 4), sum(5, 2)), 2), 5))
 
-// console.log(sum(2, 4))
-// console.log(sum(5, 2))
-// console.log(multiply(sum(2, 4), sum(5, 2)))
-// console.log(subtract(multiply(sum(2, 4), sum(5, 2)), 2))
-// console.log(divide(subtract(multiply(sum(2, 4), sum(5, 2)), 2),5))
-
-console.log(arrowfunction())
+//Gracias por el feedback Profe :)
