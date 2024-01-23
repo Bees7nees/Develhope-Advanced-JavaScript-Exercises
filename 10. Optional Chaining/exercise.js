@@ -23,3 +23,8 @@ if (values == "") {
 } else {
   console.log("Graet siti 8)");
 }
+
+//Tried Optional chaining operator method in suggested article:
+let optionalMethod = order.customer.address.city ?
+  console.log("Graet siti 8)") :
+  console.log("City is required");
