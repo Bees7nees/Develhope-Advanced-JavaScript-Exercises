@@ -1,5 +1,5 @@
-function adultFilter(persons) {
-  // ...
+function adultFilter(array) {
+  return array.filter(array => array.age >= 18);
 }
 
 const persons = [

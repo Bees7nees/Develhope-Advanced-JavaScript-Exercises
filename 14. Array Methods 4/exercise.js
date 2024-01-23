@@ -1,5 +1,5 @@
-function uncompletedNotes(notes) {
-  // ...
+function uncompletedNotes(array) {
+  
 }
 
 const notes = [
