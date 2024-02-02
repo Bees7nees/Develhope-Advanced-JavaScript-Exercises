@@ -1,5 +1,11 @@
 function uncompletedNotes(array) {
-  
+  array.forEach(element => {
+    element.todos.filter(element => {
+      if (element.done === false) {
+        console.log(element);
+      };
+    });
+  });
 }
 
 const notes = [
