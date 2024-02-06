@@ -21,6 +21,6 @@ let { id, ...personInfo} = person;
 console.log(id, personInfo);
 
 // Just to be sure
-
+console.log(person)
 console.log(id);
 console.log(personInfo);
