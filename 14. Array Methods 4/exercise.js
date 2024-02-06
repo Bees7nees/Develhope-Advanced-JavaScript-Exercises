@@ -11,7 +11,14 @@
 // Después de leer la corrección del profesor, planteo la siguiente solución:
 
 function uncompletedNotes(array) {
-  
+  array.forEach(element => {
+    element.todos = element.todos.filter(subelement => {
+      if (subelement.done === false) {
+        return subelement;
+      }
+    })
+  })
+  return array;
 }
 
 const notes = [
@@ -64,4 +71,4 @@ const notes = [
   },
 ];
 
-uncompletedNotes(notes);
+console.log(uncompletedNotes(notes))
