@@ -1,14 +1,12 @@
 // Destructuring for easier age checking
-function isAdult(person) {
-  const {id, firstName, lastName, age} = person;
-  return age >= 18
-}
+// function isAdult(person) {
+//   return person.age >= 18
+// }
 
-/*
-Si esta es la respuesta, no entiendo por qué sería más sencillo
-al haber ahora dos líneas de código dentro de la función en lugar
-de una sola :o ?
-*/
+function isAdult(person) {
+  const { age } = person;
+  return age >= 18;
+}
 
 const person = {
   id: 1,
