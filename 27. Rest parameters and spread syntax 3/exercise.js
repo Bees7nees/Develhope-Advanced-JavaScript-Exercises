@@ -7,7 +7,7 @@ const person = {
 
 // const id = person.id;
 
-let { id, personInfo, firstName, lastName, age } = person;
+let { id, ...personInfo} = person;
 
 
 
@@ -19,3 +19,8 @@ let { id, personInfo, firstName, lastName, age } = person;
 
 
 console.log(id, personInfo);
+
+// Just to be sure
+
+console.log(id);
+console.log(personInfo);
