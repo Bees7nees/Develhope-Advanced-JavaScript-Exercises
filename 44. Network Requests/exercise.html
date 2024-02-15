@@ -1,9 +1,34 @@
-<html>
-  <body>
-    <div id="container" style="display: flex; align-items: center;"></div>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="container" style="display: flex; align-items: center;"></div>
+</body>
 </html>
 
 <script>
   // code here
+  async function fetchTodo() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos/4');
+    const data = await response.json();
+    console.log(data);
+
+    const todo = data;
+    const h2 = document.createElement('h2');
+    h2.textContent = todo.title;
+
+    const checkbox = document.createElement('input');
+    checkbox.type = 'checkbox';
+    checkbox.checked = todo.completed;
+
+    const container = document.getElementById('container');
+    container.appendChild(h2);
+    container.appendChild(checkbox);
+  };
+
+  fetchTodo();
 </script>
