@@ -1,0 +1,95 @@
+<!--
+Añadir un evento al botón para que al presionarlo, se intercambie entre modo claro y oscuro,
+guarda en localStorage el ultimo modo usado y hacer que este sea el activado al entrar a la pagina.
+PISTA: utilizar elemento.classList.toggle
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Darkmode</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+      main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20vh;
+        height: 100vh;
+        background-color: beige;
+        color: #242323;
+      }
+
+      .dark {
+        background-color: #242323;
+        color: white;
+      }
+
+      button {
+        border: none;
+        border-radius: 10px;
+        padding: 20px;
+        cursor: pointer;
+        font-family: inherit;
+        font-size: 16px;
+        font-weight: bold;
+        background-color: #242323;
+        color: white;
+      }
+
+      .darkButton {
+        background-color: white;
+        color: #242323;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="main">
+      <h1>Cambiar modo claro/oscuro con el botón de abajo</h1>
+      <button id="button">Cambiar modo</button>
+    </main>
+  </body>
+</html>
+
+<script>
+  // Codigo
+  // elemento.classList.toggle
+
+  const button = document.getElementById("button");
+  const siteContent = document.getElementById("main");
+
+  function toggleNightMode () {
+    siteContent.classList.toggle("dark");
+    console.log(siteContent.classList);
+    button.classList.toggle("darkButton");
+    console.log(button.classList);
+    // Aquí añadimos la comprobación de en qué modo está la página una vez se le da click al botón.
+    const siteIsDark = siteContent.classList.contains("dark"); //Da un buleano.
+    if (siteIsDark == true) {
+      localStorage.setItem("darkmode", true);
+    } else localStorage.setItem("darkmode", false);
+  }
+
+  function recoverNightMode () {
+    const darkMode = localStorage.getItem("darkmode");
+    console.log(darkMode);
+    if (darkMode == "false") {
+      return;
+    } else {
+      siteContent.classList.toggle("dark");
+      button.classList.toggle("darkButton");
+    }
+  }
+
+  recoverNightMode();
+
+  button.addEventListener("click", toggleNightMode);
+
+</script>
