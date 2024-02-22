@@ -21,10 +21,10 @@
 
 <script>
   // code here
-  const formdata = document.querySelectorAll("input", "label");
+  const formdata = document.querySelectorAll(".form-input");
   console.log(formdata);
-
-  for (let i = 0; i < formdata.length; i++) {
-    console.log(formdata[i].id + ": " + formdata[i].value);
-  };
+  formdata.forEach(element => {
+    const label = element.previousElementSibling;
+    console.log(`${label.textContent} ${element.value}`);
+  });
 </script>
