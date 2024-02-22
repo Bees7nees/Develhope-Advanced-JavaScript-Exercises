@@ -13,7 +13,8 @@ class Person {
 
   //Answer:
   static fromJson(json) {
-    return JSON.parse(json);
+    const newPerson = JSON.parse(json);
+    return new Person(newPerson.id, newPerson.firstName, newPerson.lastName, newPerson.age);
   }
 }
 

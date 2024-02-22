@@ -3,8 +3,7 @@
 //   return person.age >= 18
 // }
 
-function isAdult(person) {
-  const { age } = person;
+function isAdult({ age }) {
   return age >= 18;
 }
 
